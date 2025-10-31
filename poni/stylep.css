@@ -1,0 +1,149 @@
+/* ====== Header style ====== */
+.site-header{
+  position: sticky; top:0; z-index:50;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:16px; padding:10px 20px;
+  background:#fff; box-shadow:0 1px 0 rgba(0,0,0,.05);
+}
+
+.brand{
+  display:flex; align-items:center; gap:10px;
+  font-weight:800; color:#1f1f27; text-decoration:none;
+}
+.orb{
+  width:28px; height:28px; border-radius:50%;
+  background: radial-gradient(120% 120% at 30% 30%, #ffd5f2, #a9baf8 50%, #9cf 70%);
+  box-shadow: 0 0 0 3px rgba(255,255,255,.9), 0 6px 18px rgba(80,70,160,.25);
+}
+
+.main-nav{display:flex; align-items:center; gap:26px;}
+.nav-link{
+  font-weight:600; color:#2b2b3a; text-decoration:none;
+}
+.nav-link:hover{opacity:.75}
+
+/* вимкнене посилання "Поні" */
+.nav-link.disabled{
+  color:#9aa0b4; cursor:default; pointer-events:none;
+}
+
+.search-box {
+  position: relative;
+}
+
+.search-box input {
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 15px;
+  outline: none;
+  transition: all .2s ease;
+}
+
+.search-box input:focus {
+  border-color: #a56cf5;
+  box-shadow: 0 0 0 3px rgba(165,108,245,.15);
+}
+
+
+.hero-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.hero-card {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background: var(--panel, #fafafa);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+}
+
+.hero-card img {
+  width: 300px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.hero-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.hero-info p {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* адаптив */
+@media (max-width: 800px) {
+  .hero-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-card img {
+    width: 100%;
+    max-width: 380px;
+  }
+}
+:root{
+  --card-bg:#fff;
+  --page-bg:#F6F4FB;           
+  --text:#1f1f27;
+  --muted:#6b6b80;
+  --radius:22px;
+}
+
+body{background:var(--page-bg); font:16px/1.5 system-ui,Segoe UI,Inter;}
+
+.ponies{
+  max-width:1080px; margin:48px auto; padding:0 20px;
+  display:grid; gap:28px;
+}
+@media (min-width:900px){
+  .ponies{grid-template-columns:1fr 1fr;}
+}
+
+.pony-card{
+  position:relative;
+  display:flex; align-items:center; gap:18px;
+  padding:18px 20px; background:var(--card-bg);
+  border-radius:var(--radius);
+  box-shadow:0 6px 18px rgba(32,20,70,.08), 0 1px 0 rgba(0,0,0,.04);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.pony-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 34px rgba(32,20,70,.12), 0 1px 0 rgba(0,0,0,.05);
+}
+
+.pony-img{
+  width:160px; height:auto; flex:0 0 160px;
+  /* акуратна “аура” навколо прозорого PNG */
+  filter: drop-shadow(0 18px 24px rgba(25, 15, 60, .18))
+          drop-shadow(0 2px 3px rgba(25, 15, 60, .12));
+}
+
+.pony-body{min-width:0}
+.pony-body h3{
+  margin:0 0 4px; font-size:22px; color:var(--text);
+  letter-spacing:.2px;
+}
+.pony-body p{
+  margin:0 0 12px; color:var(--muted);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  max-width:38ch;
+}
+.btn{
+  display:inline-block; padding:8px 14px; font-weight:600;
+  background:linear-gradient(90deg,#a56cf5,#ff72c6);
+  color:#fff; border-radius:999px; text-decoration:none;
+  box-shadow:0 6px 14px rgba(165,108,245,.35);
+}
+.btn:active{transform:translateY(1px)}
+
