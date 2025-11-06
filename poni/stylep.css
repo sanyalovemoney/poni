@@ -22,11 +22,6 @@
 }
 .nav-link:hover{opacity:.75}
 
-/* вимкнене посилання "Поні" */
-.nav-link.disabled{
-  color:#9aa0b4; cursor:default; pointer-events:none;
-}
-
 .search-box {
   position: relative;
 }
