@@ -142,3 +142,25 @@ body{background:var(--page-bg); font:16px/1.5 system-ui,Segoe UI,Inter;}
 }
 .btn:active{transform:translateY(1px)}
 
+
+
+
+
+
+.hero-card {
+  transition: transform .25s ease, box-shadow .25s ease, background .25s;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.hero-card.active {
+  transform: scale(1.02) rotate3d(1, 1, 0, 4deg);
+  background: #ffffffee;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
+
+
+.hero-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
