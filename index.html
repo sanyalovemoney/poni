@@ -81,18 +81,15 @@
   </section>
 
   <!-- КОНТАКТИ  -->
-  <section class="section" id="contact">
-    <div class="container">
-      <h2>Контакти</h2>
-      <p class="lead">Є ідея для героя або хочеш додати свою поняшку? Напиши нам!</p>
-      <form onsubmit="event.preventDefault(); alert('Дякуємо! Ми відповімо на email.');" style="display:grid; gap:10px; max-width:580px">
-        <input type="text" placeholder="Твоє ім’я" required />
-        <input type="email" placeholder="Твій email" required />
-        <textarea rows="4" placeholder="Повідомлення" required></textarea>
-        <button class="cta" type="submit">Надіслати</button>
-      </form>
-    </div>
-  </section>
+<form id="contactForm" 
+      style="display:grid; gap:10px; max-width:580px; margin:0 auto;">
+  <input type="text" name="name" placeholder="Твоє ім’я" required />
+  <input type="email" name="email" placeholder="Твій email" required />
+  <textarea name="message" rows="4" placeholder="Повідомлення" required></textarea>
+  <button class="cta" type="submit">Надіслати</button>
+</form>
+
+<p id="contactStatus" style="text-align:center;"></p>
 
   <footer>
     <div class="container" style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;">

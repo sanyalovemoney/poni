@@ -247,19 +247,17 @@ nav a:hover { background: rgba(139,92,246,.1); color: #4c1d95; } /* Ефект �
 .shot img { /* Зображення всередині картки */
   width: 100%; 
   height: 100%;
-  object-fit: cover; /* 🔥 важливо! щоб зображення заповнювало блок */
+  object-fit: cover; 
   border-radius: 14px;
 }
 
-/* FOOTER */
-footer { /* Підвал сайту */
+footer { 
   margin-top: 32px;
   padding: 28px 0 48px;
   color: var(--muted);
   border-top: 1px solid rgba(0,0,0,.06);
 }
 
-/* Анімація появи */
 @keyframes floatIn {
   from { opacity: 0; transform: translateY(12px) scale(.98); }
   to { opacity: 1; transform: none; }
