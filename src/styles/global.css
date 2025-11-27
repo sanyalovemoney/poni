@@ -3,28 +3,27 @@
   --panel: #ffffff;
   --text: #2b2b2b;
   --muted: #6b6b6b;
-  --primary: #8b5cf6;   /* фіолетовий */
-  --primary-2: #ec4899; /* рожевий */
-  --accent: #22d3ee;    /* бірюзовий */
+  --primary: #8b5cf6;   
+  --primary-2: #ec4899; 
+  --accent: #22d3ee;    
   --ring: rgba(139,92,246,.4);
   --radius: 18px;
   --shadow: 0 12px 30px rgba(0,0,0,.08);
 }
 
-* { box-sizing: border-box; } /* Універсальне скидання */
-html, body {
+* { box-sizing: border-box; 
   margin: 0;
   padding: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   color: var(--text);
-  background: var(--bg);
+  background: var(--bg); 
 }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 .container { width: min(1200px, 92vw); margin: 0 auto; }
 
 
-header {  /* Головний заголовок */
+header {  
   position: sticky;
   top: 0;
   z-index: 50;
@@ -32,21 +31,21 @@ header {  /* Головний заголовок */
   background: rgba(255,255,255,.7);
   border-bottom: 1px solid rgba(0,0,0,.06);
 }
-.nav { /* Навігаційне меню */
+.nav { 
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
   padding: 12px 0;
 }
-.brand { /* Логотип і назва сайту */
+.brand { 
   display: flex;
   align-items: center;
   gap: 10px;
   font-weight: 800;
   letter-spacing: .2px;
 }
-.brand .logo { /* Крута кругла іконка з градієнтом */
+.brand .logo { 
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -54,7 +53,7 @@ header {  /* Головний заголовок */
   box-shadow: inset 0 0 0 2px rgba(255,255,255,.8), 0 6px 18px rgba(139,92,246,.25);
   position: relative;
 }
-.brand .logo:after { /* Градієнтне світіння навколо іконки */
+.brand .logo:after { 
   content: "";
   position: absolute;
   inset: 8px;
@@ -63,10 +62,10 @@ header {  /* Головний заголовок */
   filter: blur(10px);
   opacity: .35;
 }
-nav ul { list-style: none; display: flex; gap: 18px; margin: 0; padding: 0; } /* Меню навігації */
-nav a { padding: 10px 14px; border-radius: 999px; font-weight: 600; } /* Посилання в меню */
-nav a:hover { background: rgba(139,92,246,.1); color: #4c1d95; } /* Ефект при наведенні */
-.cta { /* Кнопка заклику до дії */
+nav ul { list-style: none; display: flex; gap: 18px; margin: 0; padding: 0; } 
+nav a { padding: 10px 14px; border-radius: 999px; font-weight: 600; } 
+nav a:hover { background: rgba(139,92,246,.1); color: #4c1d95; } 
+.cta { 
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -79,72 +78,71 @@ nav a:hover { background: rgba(139,92,246,.1); color: #4c1d95; } /* Ефект �
   border: none;
   cursor: pointer;
 }
-.cta:focus { outline: 3px solid var(--ring); outline-offset: 2px; } /* Обведення при фокусі */
+.cta:focus { outline: 3px solid var(--ring); outline-offset: 2px; } 
 
-/* рівняємо іконки поні в один ряд і по низу */
+
+
 #ponyGrid{
   display: grid;
   grid-template-columns: repeat(5, minmax(120px, 1fr));
   gap: 24px;
-  align-items: end;       /* вирівнює по нижньому краю */
-  justify-items: center;  /* центрує кожну картинку в колонці */
+  align-items: end;       
+  justify-items: center; 
 }
-
-/* уніфікований розмір і красиве вписування */
 .pony-card{
-  height: 220px;      /* підбери 200–260px як подобається */
+  height: 220px;      
   width: auto;
-  object-fit: contain; /* не ріже зображення */
+  object-fit: contain;
   display: block;
 }
 
-/* адаптив: на вужчих екранах менше колонок */
+
 @media (max-width: 1100px){ #ponyGrid{ grid-template-columns: repeat(4, 1fr);} }
 @media (max-width: 780px){  #ponyGrid{ grid-template-columns: repeat(2, 1fr);} }
 
-/* кнопка праворуч під рядом поні */
+
 .pony-actions{
   display: flex;
-  justify-content: flex-end; /* переносить кнопку вправо */
+  justify-content: flex-end; 
   margin-top: 25px;
 }
 
 
 
-.hero { /* Головний банер на початку сторінки */
+.hero { 
   position: relative;
   overflow: clip;
   background: radial-gradient(1200px 600px at 50% -10%, #f0e9ff, transparent 70%),
               radial-gradient(1000px 400px at 0% 20%, #e0fbff, transparent 60%),
               radial-gradient(1000px 400px at 100% 20%, #ffe7f2, transparent 60%);
 }
-.hero .wrap { /* Контейнер з контентом всередині банера */
+.hero .wrap { 
   display: grid;
   grid-template-columns: 1.1fr .9fr;
   align-items: center;
   gap: 24px;
   padding: 56px 0 40px;
 }
-.hero h1 { /* Великий заголовок в банері */
+.hero h1 { 
   font-size: clamp(28px, 5vw, 54px);
   line-height: 1.06;
   margin: 0 0 12px;
   letter-spacing: .3px;
 }
-.hero p { /* Опис під заголовком */
+.hero p { 
   color: var(--muted);
   font-size: clamp(15px, 2.2vw, 18px);
   margin: 0 0 20px;
 }
-.hero .buttons { display: flex; gap: 12px; flex-wrap: wrap; } /* Контейнер для кнопок */
-.chip { /* Стиль для маленьких "чіпів" */
+.hero .buttons { display: flex; gap: 12px; flex-wrap: wrap; } 
+.chip {
   border: 1px dashed #d4d4d8;
   padding: 8px 12px;
   border-radius: 999px;
   font-weight: 600;
   background: white;
 }
-.pony-blob { /* Велика красива фігура з градієнтом праворуч в банері */
+.pony-blob { 
   aspect-ratio: 1 / 1;
   border-radius: 40% 60% 60% 40% / 40% 50% 50% 60%;
   background:
@@ -154,19 +152,19 @@ nav a:hover { background: rgba(139,92,246,.1); color: #4c1d95; } /* Ефект �
   box-shadow: var(--shadow);
 }
 
-.section { padding: 44px 0; } /* Блок-секція з відступами зверху і знизу */
-.section h2 { font-size: clamp(22px, 4vw, 34px); margin: 0 0 14px; } /* Заголовок секції */
-.section p.lead { color: var(--muted); margin: 0 0 20px; } /* Ведучий абзац секції */
+.section { padding: 44px 0; } 
+.section h2 { font-size: clamp(22px, 4vw, 34px); margin: 0 0 14px; } 
+.section p.lead { color: var(--muted); margin: 0 0 20px; } 
 
 .grid { /* Сітка для карток */
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 18px;
 }
-@media (max-width: 1100px) { .grid { grid-template-columns: repeat(4, 1fr); } } /* адаптивні колонки */
-@media (max-width: 780px)  { .grid { grid-template-columns: repeat(2, 1fr); } } /* адаптивні колонки */
+@media (max-width: 1100px) { .grid { grid-template-columns: repeat(4, 1fr); } } 
+@media (max-width: 780px)  { .grid { grid-template-columns: repeat(2, 1fr); } } 
 
-.card { /* Картка в сітці */
+.card { 
   background: var(--panel);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -175,8 +173,8 @@ nav a:hover { background: rgba(139,92,246,.1); color: #4c1d95; } /* Ефект �
   display: flex;
   flex-direction: column;
 }
-.card .thumb { position: relative; aspect-ratio: 4/3; display: grid; place-items: center; } /* Обгортка для зображення */
-.card .thumb::before { /* Світіння за зображенням */
+.card .thumb { position: relative; aspect-ratio: 4/3; display: grid; place-items: center; } 
+.card .thumb::before { 
   content: "";
   position: absolute;
   inset: 0;
@@ -184,10 +182,10 @@ nav a:hover { background: rgba(139,92,246,.1); color: #4c1d95; } /* Ефект �
   filter: blur(24px);
   opacity: .18;
 }
-.pony-svg { width: 64%; height: auto; opacity: .9; } /* Розмір зображення поні в картці */
-.card .body { padding: 14px 14px 16px; display: grid; gap: 8px; } /* Тіло картки */
-.card h3 { margin: 0; font-size: 18px; } /* Заголовок картки */
-.badge { /* Стиль для бейджика */
+.pony-svg { width: 64%; height: auto; opacity: .9; } 
+.card .body { padding: 14px 14px 16px; display: grid; gap: 8px; } 
+.card h3 { margin: 0; font-size: 18px; } 
+.badge { 
   font-size: 12px;
   font-weight: 800;
   letter-spacing: .3px;
@@ -197,16 +195,16 @@ nav a:hover { background: rgba(139,92,246,.1); color: #4c1d95; } /* Ефект �
   background: rgba(34,211,238,.15);
   color: #0e7490;
 }
-.traits { display: flex; flex-wrap: wrap; gap: 6px; } /* Контейнер для рисок з характеристиками */
-.traits span { /* Стиль для окремої риски */
+.traits { display: flex; flex-wrap: wrap; gap: 6px; }
+.traits span { 
   font-size: 12px;
   padding: 6px 10px;
   border-radius: 999px;
   background: #f4f4f5;
   color: #3f3f46;
 }
-.card .actions { display: flex; gap: 10px; margin-top: 6px; }   /* Контейнер для кнопок */
-.btn { /* Стиль для кнопок в картці */
+.card .actions { display: flex; gap: 10px; margin-top: 6px; }   
+.btn { 
   padding: 10px 12px;
   border-radius: 12px;
   background: #f4f4ff;
@@ -214,17 +212,17 @@ nav a:hover { background: rgba(139,92,246,.1); color: #4c1d95; } /* Ефект �
   font-weight: 700;
   cursor: pointer;
 }
-.btn:hover { background: #efe9ff; } /* Ефект при наведенні на кнопку */
+.btn:hover { background: #efe9ff; } 
 
 
-.gallery { /* Сітка для знімків екрану */
+.gallery { 
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 12px;
 }
-@media (max-width: 900px) { .gallery { grid-template-columns: repeat(3, 1fr); } } /* адаптивні колонки */
-@media (max-width: 640px) { .gallery { grid-template-columns: repeat(2, 1fr); } } /* адаптивні колонки */
-.shot { /* Окрема картка зі знімком екрану */
+@media (max-width: 900px) { .gallery { grid-template-columns: repeat(3, 1fr); } } 
+@media (max-width: 640px) { .gallery { grid-template-columns: repeat(2, 1fr); } } 
+.shot { 
   aspect-ratio: 1/1;
   border-radius: 14px;
   overflow: hidden;
@@ -232,7 +230,7 @@ nav a:hover { background: rgba(139,92,246,.1); color: #4c1d95; } /* Ефект �
   background: linear-gradient(135deg, #f0f9ff, #fee2f2);
   box-shadow: var(--shadow);
 }
-.shot { /* Окрема картка зі знімком екрану */
+.shot { 
   aspect-ratio: 1/1;
   border-radius: 14px;
   overflow: hidden;
@@ -244,7 +242,7 @@ nav a:hover { background: rgba(139,92,246,.1); color: #4c1d95; } /* Ефект �
   align-items: center;
 }
 
-.shot img { /* Зображення всередині картки */
+.shot img { 
   width: 100%; 
   height: 100%;
   object-fit: cover; 

@@ -18,7 +18,7 @@ export function Home({ onNavigate }) {
             </p>
             <div className="buttons">
               <button className="cta" onClick={() => onNavigate?.("ponies")}>
-                Створити поні
+                Наші поні
               </button>
               <button className="btn" onClick={() => onNavigate?.("gallery")}>
                 Переглянути галерею
