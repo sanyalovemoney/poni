@@ -7,9 +7,10 @@ export function Ponies() {
 
   const filtered = useMemo(() => {
     const q = query.toLowerCase();
-    return ponies.filter(p =>
-      p.name.toLowerCase().includes(q) ||
-      (p.desc?.toLowerCase().includes(q))
+    return ponies.filter(
+      (p) =>
+        p.name.toLowerCase().includes(q) ||
+        (p.desc && p.desc.toLowerCase().includes(q))
     );
   }, [query]);
 
@@ -20,19 +21,19 @@ export function Ponies() {
           <h1>Поні</h1>
           <form
             className="search-box"
-            onSubmit={e => e.preventDefault()}
+            onSubmit={(e) => e.preventDefault()}
           >
             <input
               type="text"
               placeholder="Знайти поні..."
               value={query}
-              onChange={e => setQuery(e.target.value)}
+              onChange={(e) => setQuery(e.target.value)}
             />
           </form>
         </header>
 
         <div className="hero-cards">
-          {filtered.map(p => (
+          {filtered.map((p) => (
             <PonyCard key={p.id} pony={p} />
           ))}
         </div>

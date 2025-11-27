@@ -1,8 +1,10 @@
 export function GalleryGrid({ images }) {
   return (
-    <div className="gallery-grid">
+    <div className="gallery">
       {images.map((src, i) => (
-        <img key={i} src={src} alt="" />
+        <div className="shot" key={i}>
+          <img src={src} alt={`Момент дружби ${i + 1}`} />
+        </div>
       ))}
     </div>
   );

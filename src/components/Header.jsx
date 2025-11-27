@@ -1,15 +1,39 @@
-export function Header() {
+export function Header({ onNavigate }) {
   return (
-    <header className="site-header">
-      <a className="brand" href="/">
-        <span className="orb" aria-hidden="true" />
-        My Little Pony World
-      </a>
+    <header>
+      <div className="container nav">
+        <button
+          className="brand"
+          onClick={() => onNavigate("home")}
+          style={{ background: "none", border: "none", padding: 0, cursor: "pointer" }}
+        >
+          <span className="logo" />
+          <span>My Little Pony World</span>
+        </button>
 
-      <nav className="main-nav" aria-label="Головна навігація">
-        <a className="nav-link" href="/ponies">Поні</a>
-        <a className="nav-link" href="/gallery">Галерея</a>
-      </nav>
+        <nav>
+          <ul>
+            <li>
+              <button
+                onClick={() => onNavigate("ponies")}
+                style={{ background: "none", border: "none", cursor: "pointer" }}
+              >
+                Поні
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => onNavigate("gallery")}
+                style={{ background: "none", border: "none", cursor: "pointer" }}
+              >
+                Галерея
+              </button>
+            </li>
+          </ul>
+        </nav>
+
+        
+      </div>
     </header>
   );
 }
